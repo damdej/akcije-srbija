@@ -1,0 +1,292 @@
+/* frontend/src/App.css - POBOLJŠANA VERZIJA */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+/* APP LAYOUT ZA STICKY FOOTER */
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.App > main {
+  flex: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* HEADER */
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* HERO SECTION */
+.hero {
+  background: white;
+  padding: 3rem 0;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.email-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.email-input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.subscribe-btn {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.subscribe-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* DEALS SECTION */
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin: 3rem 0 2rem;
+  color: #333;
+}
+
+.deals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.deal-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.deal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.deal-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.deal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff4757;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.deal-info {
+  padding: 1.5rem;
+}
+
+.deal-title {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #333;
+  line-height: 1.4;
+}
+
+.deal-prices {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.current-price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #2ed573;
+}
+
+.old-price {
+  font-size: 1rem;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.deal-store {
+  color: #666;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.deal-button {
+  width: 100%;
+  padding: 12px;
+  background: #3742fa;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.deal-button:hover {
+  background: #2f3542;
+}
+
+/* FOOTER - SADA JE STICKY! */
+.footer {
+  background: #2f3542;
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: auto; /* OVO GA ČINI STICKY! */
+}
+
+/* LOADING */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.loading h2 {
+  font-size: 1.5rem;
+  color: #667eea;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* ANIMACIJE */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .deals-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .hero h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero {
+    padding: 2rem 0;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+    margin: 2rem 0 1.5rem;
+  }
+
+  .deal-card {
+    margin: 0 5px;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+}
