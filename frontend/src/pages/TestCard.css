@@ -1,0 +1,264 @@
+/* TestCard.css - FINALNA VERZIJA */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap");
+.test-page {
+  min-height: 100vh;
+  background-color: #f5f6f7;
+  padding: 20px 0;
+}
+
+.test-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.test-container h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.test-container p {
+  text-align: center;
+  color: #7f8c8d;
+  margin-bottom: 30px;
+}
+
+.test-card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+}
+
+/* FINALNA SLICKDEALS KARTICA */
+.slickdeals-card-original {
+  width: 200px;
+  background: white;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: "Outfit", "Inter", Arial, sans-serif;
+  overflow: hidden;
+  padding: 8px; /* Dodat padding na celu karticu */
+}
+
+/* Image Section - SIVA POZADINA I GAP */
+.card-image-original {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  background: #f8f9fa;
+  margin-bottom: 8px; /* Povećan margin ispod slike */
+  border-radius: 6px;
+}
+.card-img-original {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 6px;
+}
+
+/* Content Section - VIŠE RAZMAKA */
+.card-content-original {
+  padding: 0;
+}
+
+/* Title - VIŠE RAZMAKA */
+.card-title-original {
+  font-size: 12px;
+  line-height: 1.4;
+  color: #2c3e50;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 24px;
+  cursor: pointer;
+  font-weight: bold; /* Boldovan naslov */
+}
+.card-actions-original {
+  display: flex;
+  justify-content: space-between; /* Levo i desno */
+  align-items: left;
+  padding-top: 2px;
+  padding-left: 2px;
+}
+.left-actions {
+  display: flex;
+  gap: 12px; /* Razmak između like i komentara */
+}
+
+.card-title-original:hover {
+  color: #6c7175;
+}
+
+/* Store and Time - VIŠE RAZMAKA */
+.card-meta-original {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px; /* Povećan margin */
+  font-size: 11px;
+}
+
+.store-original {
+  color: #7f8c8d;
+  font-weight: bold;
+}
+
+.time-original {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+/* Prices - VIŠE RAZMAKA */
+.card-prices-original {
+  display: flex;
+  flex-direction: column; /* Postavljamo vertikalno */
+  gap: 4px; /* Razmak između redova */
+  margin-bottom: 16px;
+}
+.card-store-footer {
+  font-size: 16px;
+  color: #95a5a6;
+  text-align: center;
+  margin-top: 8px;
+}
+.price-main-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.price-current-original {
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+}
+.price-current-original {
+  font-size: 14px;
+  font-weight: bold;
+  color: #000; /* Crna boja */
+}
+
+.price-original-original {
+  font-size: 11px;
+  color: hsl(6, 81%, 51%);
+  text-decoration: line-through;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.price-original-original .fa-fire {
+  font-size: 16px;
+  color: hsl(6, 81%, 51%); /* Crvena boja za ikonu */
+  padding-left: 8px;
+}
+
+.discount-original {
+  background: hsl(6, 81%, 51%);
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+/* DIVIDER */
+.card-divider-original {
+  height: 2px;
+  background: #f1f2f6;
+  margin: 4px 0; /* Smanjeno sa 16px na 8px */
+}
+
+/* Actions - SIVE IKONE BEZ BORDERA */
+.card-actions-original {
+  display: flex;
+  gap: 12px;
+  padding-top: 8px;
+  justify-content: center;
+}
+
+.action-btn-original {
+  display: flex;
+  align-items: center;
+  gap: 4px; /* Razmak između ikone i broja */
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  color: #95a5a6;
+  transition: all 0.2s ease;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+/* Hover efekti */
+.action-btn-original:hover {
+  background: #f8f9fa;
+}
+.action-icon-original {
+  font-size: 14px;
+  color: #95a5a6;
+}
+
+.action-count {
+  font-size: 12px;
+  color: #95a5a6;
+}
+/* Specifičan hover za komentar - circle shape */
+.action-btn-original:nth-child(2):hover {
+  background: #e8f4fd; /* Svijetlo plava za komentar */
+  transform: scale(1.1);
+}
+
+/* Specifičan hover za like */
+.action-btn-original:nth-child(1):hover {
+  background: #fdf2f2; /* Svijetlo crvena za like */
+  transform: scale(1.1);
+}
+
+/* Specifičan hover za save */
+.action-btn-original:nth-child(3):hover {
+  background: #f0f8f0; /* Svijetlo zelena za save */
+  transform: scale(1.1);
+}
+
+.action-icon-original {
+  font-size: 16px; /* Povećane ikone */
+  filter: grayscale(0.3); /* Blago siva boja */
+}
+
+/* Sekcija sa objašnjenjem izmena */
+.changes-explained {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e1e1e1;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.changes-explained h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.changes-explained ul {
+  list-style: none;
+  padding: 0;
+}
+
+.changes-explained li {
+  padding: 8px 0;
+  font-size: 14px;
+  color: #7f8c8d;
+  border-bottom: 1px solid #f1f2f6;
+}
+
+.changes-explained li:last-child {
+  border-bottom: none;
+}

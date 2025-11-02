@@ -1,0 +1,489 @@
+/* CategoryPage.css - AŽURIRANO sa podkategorijama i circle ikonom */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap");
+
+.category-page {
+  min-height: 100vh;
+  background-color: #f5f6f7;
+  font-family: "Outfit", "Inter", Arial, sans-serif;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* BREADCRUMB STYLES - AŽURIRANO */
+.breadcrumb {
+  background: #f5f6f7;
+  padding: 20px 0 10px 0;
+}
+
+.breadcrumb-link {
+  color: #3498db;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.breadcrumb-link:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}
+
+.breadcrumb-separator {
+  color: #95a5a6;
+  margin: 0 8px;
+  font-size: 14px;
+}
+
+.breadcrumb-current {
+  color: #2c3e50;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* CATEGORY HEADER - AŽURIRANO SA IKONOM ISPOD NASLOVA */
+.category-header {
+  background: #f5f6f7;
+  padding: 0 0 20px 0;
+  text-align: left; /* Levo poravnanje */
+}
+
+.category-title-container {
+  display: flex;
+  flex-direction: column; /* Vertikalno poravnanje */
+  align-items: flex-start; /* Levo poravnanje */
+  gap: 12px;
+}
+
+.category-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px; /* Povećana širina za circle */
+  height: 60px; /* Povećana visina za circle */
+  background: #87ceeb; /* Sky blue pozadina */
+  border-radius: 50%; /* Circle shape */
+  padding: 15px;
+}
+
+.category-icon i {
+  font-size: 28px; /* Povećana ikona */
+  color: #000080; /* Navy boja ikone */
+}
+
+.category-title {
+  font-weight: 700;
+  font-size: 32px;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.category-description {
+  font-size: 16px;
+  color: #7f8c8d;
+  margin: 8px 0 0 0; /* Uklonjena margina levo */
+}
+
+/* CATEGORY CONTENT LAYOUT */
+.category-content {
+  padding: 0 0 30px 0;
+}
+
+.category-layout {
+  display: grid;
+  grid-template-columns: 250px 1fr 280px;
+  gap: 20px;
+  align-items: start;
+}
+
+/* LEVI SIDEBAR STYLES - DODATE PRAVE PODEKATEGORIJE */
+.category-sidebar {
+  position: sticky;
+  top: 20px;
+}
+
+.sidebar-section {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e6e6e6;
+}
+
+.subcategories-title {
+  font-weight: 600;
+  font-size: 16px;
+  color: #2c3e50;
+  margin: 0 0 15px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.subcategories-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.subcategory-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  width: 100%;
+  font-size: 14px;
+  color: #2c3e50;
+}
+
+.subcategory-item:hover {
+  background: #f8f9fa;
+}
+
+.subcategory-item.active {
+  background: #3498db;
+  color: white;
+}
+
+.subcategory-item.active .subcategory-name,
+.subcategory-item.active .product-count {
+  color: white;
+}
+
+.subcategory-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.subcategory-icon i {
+  font-size: 14px;
+  color: #7f8c8d;
+}
+
+.subcategory-item.active .subcategory-icon {
+  background: white;
+}
+
+.subcategory-item.active .subcategory-icon i {
+  color: #3498db;
+}
+
+.subcategory-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.subcategory-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.product-count {
+  font-size: 12px;
+  color: #7f8c8d;
+}
+
+/* GLAVNI SADRŽAJ */
+.category-main {
+  background: white;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e6e6e6;
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.results-header h2 {
+  font-weight: 600;
+  font-size: 20px;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.results-count {
+  font-size: 14px;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+/* Grid sa 5 KARTICA po redu - ISTO KAO NA HOME */
+.deals-grid {
+  display: grid !important;
+  grid-template-columns: repeat(5, 200px) !important;
+  gap: 8px !important;
+
+  justify-content: center !important;
+  justify-items: center !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+}
+
+/* DESNI SIDEBAR - ISTO KAO NA HOME */
+.right-sidebar {
+  position: sticky;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: fit-content;
+}
+
+.sidebar-widget {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: 1px solid #e6e6e6;
+}
+
+.sidebar-widget h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #2c3e50;
+  padding: 15px 20px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+/* Popular deals list */
+.popular-deals-list {
+  padding: 10px 0;
+}
+
+.popular-deal-item {
+  padding: 12px 20px;
+  border-bottom: 1px solid #f1f2f6;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.popular-deal-item:hover {
+  background-color: #f8f9fa;
+}
+
+.popular-deal-item:last-child {
+  border-bottom: none;
+}
+
+.popular-deal-content {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.popular-deal-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid #eaeaea;
+}
+
+.popular-deal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.popular-deal-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.popular-deal-info h4 {
+  margin: 0 0 6px 0;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #2c3e50;
+}
+
+.popular-deal-prices {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+
+.popular-deal-prices .current-price {
+  font-weight: 700;
+  color: #e74c3c;
+  font-size: 14px;
+}
+
+.popular-deal-prices .original-price {
+  font-size: 12px;
+  color: #7f8c8d;
+  text-decoration: line-through;
+}
+
+.popular-deal-meta {
+  font-size: 11px;
+  color: #7f8c8d;
+}
+
+.popular-deal-meta .votes {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.popular-deal-meta .votes i {
+  color: #ff6b00;
+}
+
+/* Ads Widget */
+.ads-container {
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ad-item {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 6px;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.ad-item:hover {
+  transform: translateY(-2px);
+}
+
+.ad-content {
+  padding: 25px 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.ad-content i {
+  font-size: 24px;
+}
+
+.ad-content span {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1500px) {
+  .deals-grid {
+    grid-template-columns: repeat(4, 200px) !important;
+  }
+}
+
+@media (max-width: 1300px) {
+  .deals-grid {
+    grid-template-columns: repeat(3, 200px) !important;
+  }
+
+  .category-layout {
+    grid-template-columns: 250px 1fr;
+  }
+
+  .right-sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .category-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .category-sidebar {
+    position: static;
+    order: 2;
+  }
+
+  .category-main {
+    order: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .deals-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .deals-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .results-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .category-title {
+    font-size: 24px;
+  }
+
+  .category-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .category-icon i {
+    font-size: 22px;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+}
+
+/* LOADING AND ERROR STATES */
+.loading,
+.error,
+.no-results {
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 18px;
+  color: #7f8c8d;
+}
+
+.error {
+  color: #e74c3c;
+}
+
+.no-results p {
+  margin: 0;
+}

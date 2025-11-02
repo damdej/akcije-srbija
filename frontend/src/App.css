@@ -1,4 +1,4 @@
-/* frontend/src/App.css - POBOLJŠANA VERZIJA */
+/* SLICKDEALS INSPIRED STYLES */
 * {
   margin: 0;
   padding: 0;
@@ -6,287 +6,303 @@
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+  background-color: #f6f6f6;
   color: #333;
-  background-color: #f8f9fa;
+  line-height: 1.6;
 }
 
-/* APP LAYOUT ZA STICKY FOOTER */
 .App {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.App > main {
-  flex: 1;
-}
-
-.container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 20px;
 }
 
-/* HEADER */
+/* HEADER - Slickdeals Style */
 .header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
   color: white;
-  padding: 2rem 0;
+  padding: 25px 30px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 20px rgba(255, 107, 107, 0.3);
   text-align: center;
 }
 
 .header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 2.8em;
+  font-weight: 800;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
 }
 
 .header p {
-  font-size: 1.1rem;
-  opacity: 0.9;
+  font-size: 1.2em;
+  opacity: 0.95;
+  font-weight: 400;
+  margin-bottom: 20px;
 }
 
-/* HERO SECTION */
-.hero {
-  background: white;
-  padding: 3rem 0;
-  text-align: center;
-  border-bottom: 1px solid #eee;
-}
-
-.hero h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-.hero p {
-  font-size: 1.1rem;
-  color: #666;
-  margin-bottom: 2rem;
-}
-
-.newsletter-form {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-.email-input {
-  flex: 1;
-  padding: 12px 16px;
-  border: 2px solid #ddd;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: border-color 0.3s;
-}
-
-.email-input:focus {
-  outline: none;
-  border-color: #667eea;
-}
-
-.subscribe-btn {
-  padding: 12px 24px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+.scrape-btn {
+  background: rgba(255, 255, 255, 0.2);
   color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 12px 28px;
+  border-radius: 25px;
+  font-size: 1em;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
-.subscribe-btn:hover {
+.scrape-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
   transform: translateY(-2px);
 }
 
-/* DEALS SECTION */
-.section-title {
-  text-align: center;
-  font-size: 2rem;
-  margin: 3rem 0 2rem;
-  color: #333;
-}
-
-.deals-grid {
+/* DEALS CONTAINER - Slickdeals Card Grid */
+.deals-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+  margin-top: 10px;
 }
 
+/* DEAL CARD - Slickdeals Style */
 .deal-card {
   background: white;
   border-radius: 12px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: all 0.3s ease;
+  border: 1px solid #eaeaea;
+  position: relative;
 }
 
 .deal-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
 }
 
 .deal-image {
-  position: relative;
+  width: 100%;
   height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.deal-content {
+  padding: 20px;
+}
+
+/* VOTING SYSTEM - Slickdeals Style */
+.voting-system {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vote-btn {
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.vote-btn:hover {
+  background: #f8f9fa;
+  transform: scale(1.1);
+}
+
+.upvote:hover {
+  color: #ff6b6b;
+}
+
+.downvote:hover {
+  color: #3498db;
+}
+
+.vote-count {
+  font-weight: 700;
+  font-size: 1.1em;
+  color: #333;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* DEAL INFO */
+.deal-title {
+  font-size: 1.15em;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  color: #2c3e50;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-.deal-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.deal-store {
+  display: inline-block;
+  background: #f8f9fa;
+  color: #6c757d;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  font-weight: 500;
+  margin-bottom: 15px;
 }
 
-.discount-badge {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: #ff4757;
-  color: white;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-weight: bold;
-  font-size: 0.8rem;
-}
-
-.deal-info {
-  padding: 1.5rem;
-}
-
-.deal-title {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  color: #333;
-  line-height: 1.4;
-}
-
-.deal-prices {
+/* PRICES - Slickdeals Style */
+.prices {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 1rem;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
 }
 
-.current-price {
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: #2ed573;
+.new-price {
+  font-size: 1.4em;
+  font-weight: 800;
+  color: #2ecc71;
 }
 
 .old-price {
-  font-size: 1rem;
-  color: #999;
+  font-size: 1em;
+  color: #95a5a6;
   text-decoration: line-through;
 }
 
-.deal-store {
-  color: #666;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
+.discount {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  font-weight: 700;
+  display: inline-block;
 }
 
-.deal-button {
-  width: 100%;
-  padding: 12px;
-  background: #3742fa;
+/* DEAL LINK - Slickdeals Style */
+.deal-link {
+  display: inline-block;
+  background: linear-gradient(135deg, #3498db, #2980b9);
   color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 8px;
   font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.deal-button:hover {
-  background: #2f3542;
-}
-
-/* FOOTER - SADA JE STICKY! */
-.footer {
-  background: #2f3542;
-  color: white;
+  transition: all 0.3s ease;
   text-align: center;
-  padding: 2rem 0;
-  margin-top: auto; /* OVO GA ČINI STICKY! */
+  width: 100%;
+  font-size: 0.95em;
+  letter-spacing: 0.3px;
 }
 
-/* LOADING */
-.loading {
-  display: flex;
-  justify-content: center;
+.deal-link:hover {
+  background: linear-gradient(135deg, #2980b9, #2471a3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+}
+
+/* COUNTDOWN TIMER */
+.countdown {
+  background: #fff3cd;
+  color: #856404;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.85em;
+  font-weight: 600;
+  margin-bottom: 15px;
+  display: inline-flex;
   align-items: center;
-  height: 60vh;
-  flex-direction: column;
-  gap: 20px;
+  gap: 5px;
 }
 
-.loading h2 {
-  font-size: 1.5rem;
-  color: #667eea;
-  animation: pulse 1.5s ease-in-out infinite;
+/* CATEGORY BADGE */
+.category-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(52, 152, 219, 0.9);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75em;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
 }
 
-/* ANIMACIJE */
-@keyframes pulse {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
+/* LOADING & ERROR STATES */
+.loading,
+.error {
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 1.2em;
 }
 
-/* RESPONSIVE */
+.loading {
+  color: #3498db;
+}
+
+.error {
+  color: #e74c3c;
+}
+
+.no-deals {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6c757d;
+  font-size: 1.1em;
+}
+
+/* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
-  .newsletter-form {
-    flex-direction: column;
-  }
-
-  .deals-grid {
+  .deals-container {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 15px;
   }
 
   .header h1 {
-    font-size: 2rem;
+    font-size: 2.2em;
   }
 
-  .hero h2 {
-    font-size: 1.6rem;
+  .header {
+    padding: 20px;
+  }
+
+  .deal-card {
+    margin: 0 10px;
   }
 }
 
 @media (max-width: 480px) {
+  .App {
+    padding: 15px 10px;
+  }
+
   .header h1 {
-    font-size: 1.8rem;
+    font-size: 1.8em;
   }
 
-  .hero {
-    padding: 2rem 0;
-  }
-
-  .section-title {
-    font-size: 1.6rem;
-    margin: 2rem 0 1.5rem;
-  }
-
-  .deal-card {
-    margin: 0 5px;
-  }
-
-  .container {
-    padding: 0 15px;
+  .voting-system {
+    top: 10px;
+    left: 10px;
+    padding: 6px;
   }
 }
