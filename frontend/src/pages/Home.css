@@ -53,6 +53,16 @@
   position: sticky;
   top: 100px;
 }
+.popular-deal-item {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.popular-deal-item:hover {
+  background: #e9ecef;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
 /* OSTALI STILOVI ZA SIDEBAR... */
 

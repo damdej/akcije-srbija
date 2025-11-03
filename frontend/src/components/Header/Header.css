@@ -254,39 +254,96 @@
 .search-btn:hover {
   background: #e55a2b;
 }
-
-/* QUICK CATEGORIES */
-.quick-categories {
+/* KATEGORIJE SEKCIJA - ISPOD SEARCH BARA */
+.categories-section {
+  margin-top: 15px;
+}
+.categories-dropdown {
+  position: relative;
+}
+.categories-container {
   display: flex;
   align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  justify-content: center;
+  gap: 20px;
   max-width: 800px;
   margin: 0 auto;
 }
 
-.quick-label {
-  font-weight: 600;
-  color: #ffffff;
-  font-size: 0.8em;
+.categories-btn {
+  color: white;
+  padding: 8px 16px;
+  background-color: black;
+  border: none;
+  cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
+  font-size: 1em;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.categories-btn:hover {
+  background: #444;
+  border-radius: 24px;
+  color: white;
 }
 
+/* DROPDOWN MENU - JEDNA KOLONA, BEZ BORDERA */
+.categories-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: 220px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  z-index: 1000;
+  margin-top: 8px;
+  padding: 8px 0;
+  border: none; /* BEZ BORDERA */
+}
+.category-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1em;
+  color: #ffffff;
+  transition: background-color 0.2s;
+  text-align: left;
+}
+.category-item:hover {
+  background: #333;
+}
+.category-item i {
+  width: 16px;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+/* QUICK CATEGORIES */
+/* Brze kategorije pored dugmeta */
+.quick-categories {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
 .quick-cat {
   background: #333;
   border: 1px solid #555;
-  padding: 4px 10px;
-  border-radius: 12px;
+  padding: 6px 12px;
+  border-radius: 25px;
   font-size: 0.75em;
   cursor: pointer;
   transition: all 0.3s ease;
   color: #ffffff;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
 }
 
 .quick-cat:hover {

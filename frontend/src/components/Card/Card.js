@@ -12,12 +12,9 @@ const Card = React.memo(({
         setImgError(true);
     }, []);
 
-    const handleImageClick = () => {
-        window.open(deal.affiliateLink || deal.link, '_blank');
-    };
-
-    const handleTitleClick = () => {
-        window.open(deal.affiliateLink || deal.link, '_blank');
+    // Funkcija za otvaranje linka ponude
+    const handleDealClick = () => {
+        window.open(deal.link, '_blank', 'noopener,noreferrer');
     };
 
     const handleVote = useCallback((voteType) => {
@@ -63,27 +60,27 @@ const Card = React.memo(({
     return (
         <div className="slickdeals-card">
 
-            {/* Image Section */}
-            <div className="card-image-container">
+            {/* Image Section - SADA KLIKABILNA */}
+            <div className="card-image-container" onClick={handleDealClick}>
                 <img
                     src={imgError ? getFallbackImage(deal.category, deal.title) : deal.image}
                     alt={deal.title}
                     className="card-image"
-                    onClick={handleImageClick}
                     onError={handleImageError}
+                    style={{ cursor: 'pointer' }}
                 />
             </div>
 
             {/* Content Section */}
             <div className="card-content">
-                {/* Title */}
-                <a
+                {/* Title - SADA KLIKABILAN */}
+                <div
                     className="card-title"
-                    onClick={handleTitleClick}
+                    onClick={handleDealClick}
                     style={{ cursor: 'pointer' }}
                 >
                     {deal.title}
-                </a>
+                </div>
 
                 {/* Store and Time */}
                 <div className="card-meta">
@@ -124,12 +121,11 @@ const Card = React.memo(({
                 {/* DIVIDER */}
                 <div className="card-divider"></div>
 
-                {/* Actions - ISPRAVLJENO OVDE */}
+                {/* Actions */}
                 <div className="card-actions">
                     <div className="left-actions">
                         <button className="action-btn">
                             <i className="fa-solid fa-thumbs-up action-icon"></i>
-                            {/* ISPRAVLJENO: deal.votes?.positive umesto deal.votes */}
                             <span className="action-count">{deal.votes?.positive || 0}</span>
                         </button>
                         <button className="action-btn">

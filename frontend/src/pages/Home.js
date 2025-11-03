@@ -31,6 +31,11 @@ function Home() {
             .slice(0, 3);
     };
 
+    // Funkcija za otvaranje linka u novom tabu
+    const openDealLink = (link) => {
+        window.open(link, '_blank', 'noopener,noreferrer');
+    };
+
     if (loading) return <div className="loading">Učitavanje ponuda...</div>;
     if (error) return <div className="error">{error}</div>;
 
@@ -65,11 +70,17 @@ function Home() {
             {/* SIDEBAR - DESNA STRANA */}
             <div className="sidebar">
                 <div className="sidebar-widget">
-                    <h3>🔥 Popularne Ponude</h3>
+                    <h3><span> <i className="fa-solid fa-fire"></i></span>
+                        Popularne Ponude</h3>
                     <div className="popular-deals">
                         {popularDeals.length > 0 ? (
                             popularDeals.map(deal => (
-                                <div key={deal._id} className="popular-deal-item">
+                                <div
+                                    key={deal._id}
+                                    className="popular-deal-item"
+                                    onClick={() => openDealLink(deal.link)} // DODATA FUNKCIONALNOST KLIKA
+                                    style={{ cursor: 'pointer' }}
+                                >
                                     <div className="popular-deal-image">
                                         <img
                                             src={deal.image || 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE2MCIgdmlld0JveD0iMCAwIDIwMCAxNjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTYwIiBmaWxsPSIjRjhGOUZBIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iODAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzdGOEM4RCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9IjAuMzVlbSI+Tk8gSU1HPC90ZXh0Pgo8L3N2Zz4K'}

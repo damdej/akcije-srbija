@@ -5,6 +5,7 @@ import './Header.css';
 function Header() {
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('all');
+    const [showCategories, setShowCategories] = useState(false); // DODATO ZA DROPDOWN
     const navigate = useNavigate();
 
     const categories = [
@@ -17,17 +18,16 @@ function Header() {
         { value: 'hrana', label: 'Hrana', icon: 'fas fa-utensils' },
         { value: 'karte', label: 'Karte', icon: 'fas fa-ticket-alt' },
         { value: 'usluge', label: 'Usluge', icon: 'fas fa-tools' }
-        // SAMO JEDINSTVENE VREDNOSTI
     ];
 
     const handleSearch = (e) => {
         e.preventDefault();
-        // Implementirajte pretragu kasnije
         console.log('Search:', searchQuery, selectedCategory);
     };
 
     const handleCategorySelect = (categoryValue) => {
         setSelectedCategory(categoryValue);
+        setShowCategories(false); // Zatvori dropdown kada se odabere kategorija
 
         if (categoryValue === 'all') {
             navigate('/');
@@ -42,7 +42,6 @@ function Header() {
     };
 
     const handleNavClick = (section) => {
-        // Možete dodati funkcionalnost za navigacione linkove kasnije
         console.log('Navigation:', section);
     };
 
@@ -57,7 +56,6 @@ function Header() {
                             <h1>Super Akcije</h1>
                         </div>
                         <nav className="main-nav">
-                            {/* Dodajte ovo u main-nav za testiranje */}
                             <a
                                 href="/podnesi-ponudu"
                                 className="nav-link"
@@ -156,22 +154,6 @@ function Header() {
                 <div className="container">
                     <form onSubmit={handleSearch} className="search-form">
                         <div className="search-container">
-                            {/* Category Dropdown with Arrow */}
-                            <div className="category-dropdown-container">
-                                <select
-                                    value={selectedCategory}
-                                    onChange={(e) => handleCategorySelect(e.target.value)}
-                                    className="category-dropdown"
-                                >
-                                    {categories.map(cat => (
-                                        <option key={cat.value} value={cat.value}>
-                                            {cat.label}
-                                        </option>
-                                    ))}
-                                </select>
-                                <i className="fas fa-chevron-down dropdown-arrow"></i>
-                            </div>
-
                             {/* Search Input */}
                             <div className="search-input-container">
                                 <input
@@ -188,22 +170,50 @@ function Header() {
                         </div>
                     </form>
 
-                    {/* Quick Categories */}
-                    <div className="quick-categories">
-                        <span className="quick-label">
-                            <i className="fas fa-bolt"></i>
-                            Brze kategorije:
-                        </span>
-                        {categories.slice(1, 7).map(cat => (
-                            <button
-                                key={cat.value}
-                                className={`quick-cat ${selectedCategory === cat.value ? 'active' : ''}`}
-                                onClick={() => handleCategorySelect(cat.value)}
-                            >
-                                <i className={cat.icon}></i>
-                                {cat.label}
-                            </button>
-                        ))}
+                    {/* KATEGORIJE ISPOD SEARCH BARA - SA DROPDOWN-OM I BRZIM KATEGORIJAMA */}
+                    <div className="categories-section">
+                        <div className="categories-container">
+                            {/* Kategorije dropdown dugme */}
+                            <div className="categories-dropdown">
+                                <button
+                                    className="categories-btn"
+                                    onClick={() => setShowCategories(!showCategories)}
+                                >
+                                    Kategorije
+                                    <i className="fas fa-chevron-down"></i>
+                                </button>
+
+                                {/* Dropdown menu - JEDNA KOLONA, BEZ BORDERA */}
+                                {showCategories && (
+                                    <div className="categories-dropdown-menu">
+                                        {categories.map(cat => (
+                                            <button
+                                                key={cat.value}
+                                                className={`category-item ${selectedCategory === cat.value ? 'active' : ''}`}
+                                                onClick={() => handleCategorySelect(cat.value)}
+                                            >
+                                                <i className={cat.icon}></i>
+                                                {cat.label}
+                                            </button>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+
+                            {/* Brze kategorije pored dugmeta */}
+                            <div className="quick-categories">
+                                {categories.slice(1, 7).map(cat => (
+                                    <button
+                                        key={cat.value}
+                                        className={`quick-cat ${selectedCategory === cat.value ? 'active' : ''}`}
+                                        onClick={() => handleCategorySelect(cat.value)}
+                                    >
+                                        <i className={cat.icon}></i>
+                                        {cat.label}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
