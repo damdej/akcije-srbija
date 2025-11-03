@@ -1,27 +1,29 @@
+/* SUBMIT DEAL PAGE STYLES - AŽURIRANO SA VARIJABLAMA */
+
 .submit-deal-page {
   min-height: 100vh;
-  background: #f8f9fa;
-  padding: 20px 0;
+  background: var(--bg-lighter);
+  padding: var(--space-7) 0;
 }
 
 .submit-deal-header {
   max-width: 800px;
-  margin: 0 auto 20px auto;
+  margin: 0 auto var(--space-7) auto;
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 0 30px;
+  gap: var(--space-7);
+  padding: 0 var(--space-9);
 }
 
 .back-link {
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: #ff6c37;
+  gap: var(--space-3);
+  color: var(--primary-color);
   text-decoration: none;
-  font-weight: 600;
-  padding: 10px 15px;
-  border-radius: 6px;
+  font-weight: var(--font-semibold);
+  padding: var(--space-4) var(--space-6);
+  border-radius: var(--radius-lg);
   transition: all 0.3s ease;
 }
 
@@ -31,31 +33,30 @@
 }
 
 .submit-deal-header h1 {
-  color: #2c3e50;
+  color: var(--text-dark);
   margin: 0;
 }
 
-/* Ostatak CSS ostaje isti */
 .submit-deal-container {
   max-width: 800px;
   margin: 0 auto;
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  background: var(--bg-white);
+  padding: var(--space-9);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-lg);
 }
 
 .page-description {
   text-align: center;
-  color: #7f8c8d;
-  margin-bottom: 30px;
-  font-size: 16px;
+  color: var(--text-light);
+  margin-bottom: var(--space-9);
+  font-size: var(--text-lg);
 }
 
 .submit-deal-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--space-7);
 }
 
 .form-group {
@@ -65,7 +66,7 @@
 
 .form-row {
   display: flex;
-  gap: 20px;
+  gap: var(--space-7);
 }
 
 .form-row .form-group {
@@ -77,19 +78,19 @@
 }
 
 label {
-  margin-bottom: 8px;
-  font-weight: 600;
-  color: #2c3e50;
-  font-size: 14px;
+  margin-bottom: var(--space-3);
+  font-weight: var(--font-semibold);
+  color: var(--text-dark);
+  font-size: var(--text-md);
 }
 
 input,
 select,
 textarea {
-  padding: 12px 15px;
-  border: 2px solid #e9ecef;
-  border-radius: 8px;
-  font-size: 16px;
+  padding: var(--space-5) var(--space-6);
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  font-size: var(--text-lg);
   transition: all 0.3s ease;
   font-family: inherit;
 }
@@ -98,7 +99,7 @@ input:focus,
 select:focus,
 textarea:focus {
   outline: none;
-  border-color: #ff6c37;
+  border-color: var(--primary-color);
   box-shadow: 0 0 0 3px rgba(255, 108, 55, 0.1);
 }
 
@@ -108,20 +109,20 @@ textarea {
 }
 
 .submit-btn {
-  background: #ff6c37;
-  color: white;
+  background: var(--primary-color);
+  color: var(--text-white);
   border: none;
-  padding: 15px 30px;
-  border-radius: 8px;
-  font-size: 18px;
-  font-weight: 600;
+  padding: var(--space-6) var(--space-9);
+  border-radius: var(--radius-xl);
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-top: 20px;
+  margin-top: var(--space-7);
 }
 
 .submit-btn:hover:not(:disabled) {
-  background: #e55a2b;
+  background: var(--primary-hover);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(255, 108, 55, 0.3);
 }
@@ -133,11 +134,11 @@ textarea {
 }
 
 .message {
-  padding: 15px;
-  border-radius: 8px;
-  margin-bottom: 20px;
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  margin-bottom: var(--space-7);
   text-align: center;
-  font-weight: 500;
+  font-weight: var(--font-medium);
 }
 
 .message.success {
@@ -153,16 +154,16 @@ textarea {
 }
 
 .form-tips {
-  margin-top: 40px;
-  padding: 20px;
-  background: #f8f9fa;
-  border-radius: 8px;
-  border-left: 4px solid #ff6c37;
+  margin-top: var(--space-8);
+  padding: var(--space-7);
+  background: var(--bg-lighter);
+  border-radius: var(--radius-xl);
+  border-left: 4px solid var(--primary-color);
 }
 
 .form-tips h3 {
-  color: #2c3e50;
-  margin-bottom: 15px;
+  color: var(--text-dark);
+  margin-bottom: var(--space-6);
 }
 
 .form-tips ul {
@@ -171,16 +172,16 @@ textarea {
 }
 
 .form-tips li {
-  padding: 5px 0;
-  color: #7f8c8d;
+  padding: var(--space-1) 0;
+  color: var(--text-light);
   position: relative;
-  padding-left: 20px;
+  padding-left: var(--space-7);
 }
 
 .form-tips li:before {
   content: "•";
-  color: #ff6c37;
-  font-weight: bold;
+  color: var(--primary-color);
+  font-weight: var(--font-bold);
   position: absolute;
   left: 0;
 }
@@ -188,8 +189,8 @@ textarea {
 /* Responsive */
 @media (max-width: 768px) {
   .submit-deal-container {
-    margin: 10px;
-    padding: 20px;
+    margin: var(--space-4);
+    padding: var(--space-7);
   }
 
   .form-row {
@@ -199,8 +200,28 @@ textarea {
 
   .submit-deal-header {
     flex-direction: column;
-    gap: 10px;
+    gap: var(--space-4);
     text-align: center;
-    padding: 0 20px;
+    padding: 0 var(--space-7);
+  }
+}
+
+@media (max-width: 480px) {
+  .submit-deal-page {
+    padding: var(--space-5) 0;
+  }
+
+  .submit-deal-container {
+    margin: var(--space-3);
+    padding: var(--space-5);
+  }
+
+  .submit-deal-header {
+    padding: 0 var(--space-5);
+  }
+
+  .submit-btn {
+    padding: var(--space-5) var(--space-7);
+    font-size: var(--text-md);
   }
 }

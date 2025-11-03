@@ -267,7 +267,7 @@ const CategoryPage = () => {
                                 </div>
                             </div>
 
-                            <div className="deals-grid">
+                            <div className="category-deals-grid">
                                 {deals.map(deal => (
                                     <Card key={deal._id} deal={deal} />
                                 ))}

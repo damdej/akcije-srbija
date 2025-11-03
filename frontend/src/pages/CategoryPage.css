@@ -1,29 +1,28 @@
-/* CategoryPage.css - AŽURIRANO sa podkategorijama i circle ikonom */
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap");
+/* CATEGORY PAGE STYLES - AŽURIRANO SA 5 KARTICA OD 200px */
 
 .category-page {
   min-height: 100vh;
-  background-color: #f5f6f7;
-  font-family: "Outfit", "Inter", Arial, sans-serif;
+  background-color: var(--bg-lighter);
+  font-family: var(--font-main);
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 1400px; /* POVEĆANO SA 1400px NA 1600px */
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 var(--space-5);
 }
 
-/* BREADCRUMB STYLES - AŽURIRANO */
+/* BREADCRUMB STYLES */
 .breadcrumb {
-  background: #f5f6f7;
-  padding: 20px 0 10px 0;
+  background: var(--bg-lighter);
+  padding: var(--space-7) 0 var(--space-4) 0;
 }
 
 .breadcrumb-link {
-  color: #3498db;
+  color: var(--secondary-color);
   text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: var(--text-md);
+  font-weight: var(--font-medium);
   transition: color 0.2s;
 }
 
@@ -33,129 +32,131 @@
 }
 
 .breadcrumb-separator {
-  color: #95a5a6;
-  margin: 0 8px;
-  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0 var(--space-3);
+  font-size: var(--text-md);
 }
 
 .breadcrumb-current {
-  color: #2c3e50;
-  font-size: 14px;
-  font-weight: 500;
+  color: var(--text-dark);
+  font-size: var(--text-md);
+  font-weight: var(--font-medium);
 }
 
-/* CATEGORY HEADER - AŽURIRANO SA IKONOM ISPOD NASLOVA */
+/* CATEGORY HEADER */
 .category-header {
-  background: #f5f6f7;
-  padding: 0 0 20px 0;
-  text-align: left; /* Levo poravnanje */
+  background: var(--bg-lighter);
+  padding: 0 0 var(--space-7) 0;
+  text-align: left;
 }
 
 .category-title-container {
   display: flex;
-  flex-direction: column; /* Vertikalno poravnanje */
-  align-items: flex-start; /* Levo poravnanje */
-  gap: 12px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-5);
 }
 
 .category-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px; /* Povećana širina za circle */
-  height: 60px; /* Povećana visina za circle */
-  background: #87ceeb; /* Sky blue pozadina */
-  border-radius: 50%; /* Circle shape */
-  padding: 15px;
+  width: 60px;
+  height: 60px;
+  background: #87ceeb;
+  border-radius: 50%;
+  padding: var(--space-6);
 }
 
 .category-icon i {
-  font-size: 28px; /* Povećana ikona */
-  color: #000080; /* Navy boja ikone */
+  font-size: 28px;
+  color: #000080;
 }
 
 .category-title {
-  font-weight: 700;
-  font-size: 32px;
-  color: #2c3e50;
+  font-weight: var(--font-bold);
+  font-size: var(--text-3xl);
+  color: var(--text-dark);
   margin: 0;
 }
 
 .category-description {
-  font-size: 16px;
-  color: #7f8c8d;
-  margin: 8px 0 0 0; /* Uklonjena margina levo */
+  font-size: var(--text-lg);
+  color: var(--text-light);
+  margin: var(--space-3) 0 0 0;
 }
 
-/* CATEGORY CONTENT LAYOUT */
+/* CATEGORY CONTENT LAYOUT - POPRAVLJENO ZA 5 KARTICA */
 .category-content {
-  padding: 0 0 30px 0;
+  padding: 0 0 var(--space-9) 0;
 }
 
 .category-layout {
-  display: grid;
-  grid-template-columns: 250px 1fr 280px;
-  gap: 20px;
-  align-items: start;
+  display: flex;
+  gap: var(--space-1);
+  align-items: flex-start;
+
+  margin: 0 auto;
 }
 
-/* LEVI SIDEBAR STYLES - DODATE PRAVE PODEKATEGORIJE */
+/* LEVI SIDEBAR - FIKSNE ŠIRINE */
 .category-sidebar {
   position: sticky;
-  top: 20px;
+  top: var(--space-7);
+  flex: 0 0 220px; /* SMANJENO SA 250px NA 220px */
 }
 
 .sidebar-section {
-  background: white;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e6e6e6;
+  background: var(--bg-white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-7);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
 }
 
 .subcategories-title {
-  font-weight: 600;
-  font-size: 16px;
-  color: #2c3e50;
-  margin: 0 0 15px 0;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #e6e6e6;
+  font-weight: var(--font-semibold);
+  font-size: var(--text-lg);
+  color: var(--text-dark);
+  margin: 0 0 var(--space-6) 0;
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border-light);
 }
 
 .subcategories-list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--space-3);
 }
 
 .subcategory-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px;
+  gap: var(--space-5);
+  padding: var(--space-5);
   border: none;
   background: transparent;
-  border-radius: 6px;
+  border-radius: var(--radius-lg);
   cursor: pointer;
   transition: all 0.2s;
   text-align: left;
   width: 100%;
-  font-size: 14px;
-  color: #2c3e50;
+  font-size: var(--text-md);
+  color: var(--text-dark);
 }
 
 .subcategory-item:hover {
-  background: #f8f9fa;
+  background: var(--bg-lighter);
 }
 
 .subcategory-item.active {
-  background: #3498db;
-  color: white;
+  background: var(--secondary-color);
+  color: var(--text-white);
 }
 
 .subcategory-item.active .subcategory-name,
 .subcategory-item.active .product-count {
-  color: white;
+  color: var(--text-white);
 }
 
 .subcategory-icon {
@@ -164,126 +165,130 @@
   justify-content: center;
   width: 32px;
   height: 32px;
-  background: #f8f9fa;
-  border-radius: 6px;
+  background: var(--bg-lighter);
+  border-radius: var(--radius-lg);
   flex-shrink: 0;
 }
 
 .subcategory-icon i {
-  font-size: 14px;
-  color: #7f8c8d;
+  font-size: var(--text-md);
+  color: var(--text-light);
 }
 
 .subcategory-item.active .subcategory-icon {
-  background: white;
+  background: var(--bg-white);
 }
 
 .subcategory-item.active .subcategory-icon i {
-  color: #3498db;
+  color: var(--secondary-color);
 }
 
 .subcategory-info {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--space-1);
   flex: 1;
 }
 
 .subcategory-name {
-  font-size: 14px;
-  font-weight: 500;
+  font-size: var(--text-md);
+  font-weight: var(--font-medium);
 }
 
 .product-count {
-  font-size: 12px;
-  color: #7f8c8d;
+  font-size: var(--text-sm);
+  color: var(--text-light);
 }
 
-/* GLAVNI SADRŽAJ */
+/* GLAVNI SADRŽAJ - FLEKSIBILNA ŠIRINA */
 .category-main {
-  background: white;
-  border-radius: 8px;
-  padding: 25px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e6e6e6;
+  background: var(--bg-white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  flex: 1;
+  /*min-width: 0;*/
 }
 
 .results-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 25px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: var(--space-8);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--border-light);
 }
 
 .results-header h2 {
-  font-weight: 600;
-  font-size: 20px;
-  color: #2c3e50;
+  font-weight: var(--font-semibold);
+  font-size: var(--text-xl);
+  color: var(--text-dark);
   margin: 0;
 }
 
 .results-count {
-  font-size: 14px;
-  color: #7f8c8d;
-  font-weight: 500;
+  font-size: var(--text-md);
+  color: var(--text-light);
+  font-weight: var(--font-medium);
 }
 
-/* Grid sa 5 KARTICA po redu - ISTO KAO NA HOME */
-.deals-grid {
+/* GRID SA 5 KARTICA PO REDU - FIKSNE ŠIRINE 200px */
+.category-deals-grid {
   display: grid !important;
-  grid-template-columns: repeat(5, 200px) !important;
-  gap: 8px !important;
-
+  grid-template-columns: repeat(4, 200px) !important;
+  gap: var(--space-5) !important;
   justify-content: center !important;
-  justify-items: center !important;
-  margin: 0 auto !important;
   width: 100% !important;
+  max-width: 636px !important; /* 3x200px + 2x12px = 624px + 12px sigurnosnog prostora */
+  box-sizing: border-box !important;
+  margin: 0 auto !important;
 }
 
-/* DESNI SIDEBAR - ISTO KAO NA HOME */
+/* DESNI SIDEBAR - FIKSNE ŠIRINE */
 .right-sidebar {
   position: sticky;
-  top: 20px;
+  top: var(--space-7);
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--space-7);
   height: fit-content;
+  flex: 0 0 260px; /* SMANJENO SA 280px NA 260px */
 }
 
 .sidebar-widget {
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background: var(--bg-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
   overflow: hidden;
-  border: 1px solid #e6e6e6;
+  border: 1px solid var(--border-light);
+  width: 100%;
 }
 
 .sidebar-widget h3 {
   margin: 0;
-  font-size: 16px;
-  font-weight: 700;
-  color: #2c3e50;
-  padding: 15px 20px;
-  background: #f8f9fa;
-  border-bottom: 1px solid #e6e6e6;
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  color: var(--text-dark);
+  padding: var(--space-6) var(--space-7);
+  background: var(--bg-lighter);
+  border-bottom: 1px solid var(--border-light);
 }
 
 /* Popular deals list */
 .popular-deals-list {
-  padding: 10px 0;
+  padding: var(--space-4) 0;
 }
 
 .popular-deal-item {
-  padding: 12px 20px;
-  border-bottom: 1px solid #f1f2f6;
+  padding: var(--space-5) var(--space-7);
+  border-bottom: 1px solid var(--bg-lighter);
   transition: background-color 0.2s;
   cursor: pointer;
 }
 
 .popular-deal-item:hover {
-  background-color: #f8f9fa;
+  background-color: var(--bg-lighter);
 }
 
 .popular-deal-item:last-child {
@@ -292,17 +297,17 @@
 
 .popular-deal-content {
   display: flex;
-  gap: 12px;
+  gap: var(--space-5);
   align-items: flex-start;
 }
 
 .popular-deal-image {
   width: 60px;
   height: 60px;
-  border-radius: 6px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   flex-shrink: 0;
-  border: 1px solid #eaeaea;
+  border: 1px solid var(--border-light);
 }
 
 .popular-deal-image img {
@@ -317,36 +322,36 @@
 }
 
 .popular-deal-info h4 {
-  margin: 0 0 6px 0;
-  font-size: 13px;
-  font-weight: 500;
+  margin: 0 0 var(--space-2) 0;
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
   line-height: 1.3;
-  color: #2c3e50;
+  color: var(--text-dark);
 }
 
 .popular-deal-prices {
   display: flex;
   align-items: center;
-  gap: 6px;
-  margin-bottom: 4px;
+  gap: var(--space-2);
+  margin-bottom: var(--space-1);
   flex-wrap: wrap;
 }
 
 .popular-deal-prices .current-price {
-  font-weight: 700;
-  color: #e74c3c;
-  font-size: 14px;
+  font-weight: var(--font-bold);
+  color: var(--error-color);
+  font-size: var(--text-md);
 }
 
 .popular-deal-prices .original-price {
-  font-size: 12px;
-  color: #7f8c8d;
+  font-size: var(--text-sm);
+  color: var(--text-light);
   text-decoration: line-through;
 }
 
 .popular-deal-meta {
-  font-size: 11px;
-  color: #7f8c8d;
+  font-size: var(--text-xs);
+  color: var(--text-light);
 }
 
 .popular-deal-meta .votes {
@@ -356,21 +361,25 @@
 }
 
 .popular-deal-meta .votes i {
-  color: #ff6b00;
+  color: var(--primary-color);
 }
 
 /* Ads Widget */
 .ads-container {
-  padding: 15px 20px;
+  padding: var(--space-6) var(--space-7);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--space-5);
 }
 
 .ad-item {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border-radius: 6px;
+  background: linear-gradient(
+    135deg,
+    var(--secondary-color) 0%,
+    var(--accent-color) 100%
+  );
+  color: var(--text-white);
+  border-radius: var(--radius-lg);
   transition: transform 0.2s;
   cursor: pointer;
 }
@@ -380,12 +389,12 @@
 }
 
 .ad-content {
-  padding: 25px 15px;
+  padding: var(--space-8) var(--space-6);
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-3);
 }
 
 .ad-content i {
@@ -393,24 +402,72 @@
 }
 
 .ad-content span {
-  font-weight: 600;
-  font-size: 14px;
+  font-weight: var(--font-semibold);
+  font-size: var(--text-md);
 }
 
-/* RESPONSIVE DESIGN */
-@media (max-width: 1500px) {
-  .deals-grid {
+/* LOADING AND ERROR STATES */
+.loading,
+.error,
+.no-results {
+  text-align: center;
+  padding: 60px 20px;
+  font-size: var(--text-lg);
+  color: var(--text-light);
+  grid-column: 1 / -1;
+}
+
+.error {
+  color: var(--error-color);
+}
+
+.no-results p {
+  margin: 0;
+}
+
+/* RESPONSIVE DESIGN - POPRAVLJENO ZA 5 KARTICA */
+@media (max-width: 1600px) {
+  .container {
+    max-width: 1400px;
+  }
+
+  .category-layout {
+    max-width: 1400px;
+  }
+
+  .category-deals-grid {
+    grid-template-columns: repeat(
+      3,
+      200px
+    ) !important; /* 4 kartice na manjim ekranima */
+  }
+}
+
+@media (max-width: 1400px) {
+  .container {
+    max-width: 1200px;
+  }
+
+  .category-layout {
+    max-width: 1200px;
+  }
+
+  .category-deals-grid {
     grid-template-columns: repeat(4, 200px) !important;
   }
 }
 
-@media (max-width: 1300px) {
-  .deals-grid {
-    grid-template-columns: repeat(3, 200px) !important;
+@media (max-width: 1200px) {
+  .container {
+    max-width: 1100px;
   }
 
   .category-layout {
-    grid-template-columns: 250px 1fr;
+    max-width: 1100px;
+  }
+
+  .category-deals-grid {
+    grid-template-columns: repeat(3, 200px) !important; /* 3 kartice */
   }
 
   .right-sidebar {
@@ -420,40 +477,52 @@
 
 @media (max-width: 1024px) {
   .category-layout {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 
   .category-sidebar {
     position: static;
-    order: 2;
+    flex: 0 0 auto;
+    width: 100%;
   }
 
   .category-main {
-    order: 1;
+    width: 100%;
+  }
+
+  .category-deals-grid {
+    grid-template-columns: repeat(4, 200px) !important;
   }
 }
 
 @media (max-width: 900px) {
-  .deals-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
+  .category-deals-grid {
+    grid-template-columns: repeat(3, 200px) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .category-deals-grid {
+    grid-template-columns: repeat(2, 200px) !important;
+    gap: var(--space-4) !important;
   }
 }
 
 @media (max-width: 600px) {
-  .deals-grid {
-    grid-template-columns: 1fr !important;
-    gap: 10px;
-    padding: 10px;
+  .category-deals-grid {
+    grid-template-columns: 200px !important;
+    gap: var(--space-4);
+    padding: var(--space-4);
   }
 
   .results-header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: var(--space-4);
   }
 
   .category-title {
-    font-size: 24px;
+    font-size: var(--text-2xl);
   }
 
   .category-icon {
@@ -466,24 +535,10 @@
   }
 
   .container {
-    padding: 0 10px;
+    padding: 0 var(--space-4);
   }
-}
 
-/* LOADING AND ERROR STATES */
-.loading,
-.error,
-.no-results {
-  text-align: center;
-  padding: 60px 20px;
-  font-size: 18px;
-  color: #7f8c8d;
-}
-
-.error {
-  color: #e74c3c;
-}
-
-.no-results p {
-  margin: 0;
+  .category-main {
+    padding: var(--space-5);
+  }
 }

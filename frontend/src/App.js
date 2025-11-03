@@ -6,7 +6,9 @@ import TestCard from './pages/TestCard';
 import SubmitDeal from './pages/SubmitDeal';
 import Admin from './pages/Admin'; // DODAJ OVAJ IMPORT
 import Header from './components/Header/Header';
-import './Slickdeals.css';
+//import './Slickdeals.css';
+import './App.css';
+import './styles/globals.css';
 
 function App() {
   return (

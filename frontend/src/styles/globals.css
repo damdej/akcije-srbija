@@ -1,0 +1,339 @@
+/* GLOBAL CSS VARIJABLE - CENTRALNI BASE */
+:root {
+  /* ===== BOJE ===== */
+  --primary-color: #ff6c37;
+  --primary-hover: #e55a2b;
+  --secondary-color: #667eea;
+  --accent-color: #764ba2;
+
+  /* TEXT BOJE */
+  --text-dark: #2c3e50;
+  --text-medium: #2d2d2d;
+  --text-light: #7f8c8d;
+  --text-muted: #95a5a6;
+  --text-white: #ffffff;
+
+  /* BACKGROUND BOJE */
+  --bg-black: #000000;
+  --bg-white: #ffffff;
+  --bg-light: #f7f7f7;
+  --bg-lighter: #f8f9fa;
+  --bg-gray: #f0f0f0;
+
+  /* BORDER & SHADOW BOJE */
+  --border-light: #e1e1e1;
+  --border-medium: #ddd;
+  --border-dark: #333;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+
+  /* STATUS BOJE */
+  --success-color: #27ae60;
+  --success-hover: #219653;
+  --error-color: #e74c3c;
+  --error-hover: #c0392b;
+  --discount-color: #e32b2b;
+
+  /* ===== TYPOGRAPHY ===== */
+  --font-main: "Outfit", "Inter", Arial, sans-serif;
+
+  /* FONT SIZES */
+  --text-xs: 11px;
+  --text-sm: 12px;
+  --text-base: 13px;
+  --text-md: 14px;
+  --text-lg: 16px;
+  --text-xl: 18px;
+  --text-2xl: 1.8em;
+  --text-3xl: 2em;
+  --text-4xl: 3em;
+
+  /* FONT WEIGHTS */
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+
+  /* ===== SPACING ===== */
+  --space-1: 4px;
+  --space-2: 6px;
+  --space-3: 8px;
+  --space-4: 10px;
+  --space-5: 12px;
+  --space-6: 15px;
+  --space-7: 20px;
+  --space-8: 25px;
+  --space-9: 30px;
+
+  /* ===== BORDER RADIUS ===== */
+  --radius-sm: 3px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
+  --radius-2xl: 12px;
+  --radius-3xl: 25px;
+  --radius-full: 50px;
+
+  /* ===== SHADOWS ===== */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 4px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+  /* ===== BREAKPOINTS ===== */
+  --mobile: 480px;
+  --tablet: 768px;
+  --desktop: 1024px;
+  --large: 1200px;
+}
+
+/* ===== RESET & BASE STYLES ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-main);
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-light);
+  color: var(--text-medium);
+  line-height: 1.4;
+  font-size: var(--text-base);
+}
+/* ===== HEADER WRAPPER STYLES ===== */
+.header-wrapper {
+  width: 100vw !important;
+  margin-left: calc(-50vw + 50%) !important;
+  background: var(--bg-black) !important;
+  position: relative;
+  left: 0;
+  right: 0;
+}
+/* FORSIRAJ 5 KARTICA NA HOME PAGE */
+.home-page .deals-grid {
+  grid-template-columns: repeat(5, 200px) !important;
+  justify-content: flex-start !important;
+}
+
+.header-wrapper > * {
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+}
+
+/* ===== UTILITY CLASSES ===== */
+
+/* FLEX UTILITIES */
+.flex {
+  display: flex;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* GRID UTILITIES */
+.grid {
+  display: grid;
+}
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.grid-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+.grid-auto {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* SPACING UTILITIES */
+.gap-xs {
+  gap: var(--space-1);
+}
+.gap-sm {
+  gap: var(--space-2);
+}
+.gap-md {
+  gap: var(--space-5);
+}
+.gap-lg {
+  gap: var(--space-7);
+}
+
+.p-xs {
+  padding: var(--space-1);
+}
+.p-sm {
+  padding: var(--space-3);
+}
+.p-md {
+  padding: var(--space-5);
+}
+.p-lg {
+  padding: var(--space-7);
+}
+
+.m-xs {
+  margin: var(--space-1);
+}
+.m-sm {
+  margin: var(--space-3);
+}
+.m-md {
+  margin: var(--space-5);
+}
+.m-lg {
+  margin: var(--space-7);
+}
+
+/* TEXT UTILITIES */
+.text-xs {
+  font-size: var(--text-xs);
+}
+.text-sm {
+  font-size: var(--text-sm);
+}
+.text-base {
+  font-size: var(--text-base);
+}
+.text-md {
+  font-size: var(--text-md);
+}
+.text-lg {
+  font-size: var(--text-lg);
+}
+.text-xl {
+  font-size: var(--text-xl);
+}
+
+.text-dark {
+  color: var(--text-dark);
+}
+.text-medium {
+  color: var(--text-medium);
+}
+.text-light {
+  color: var(--text-light);
+}
+.text-muted {
+  color: var(--text-muted);
+}
+.text-white {
+  color: var(--text-white);
+}
+
+.font-normal {
+  font-weight: var(--font-normal);
+}
+.font-medium {
+  font-weight: var(--font-medium);
+}
+.font-semibold {
+  font-weight: var(--font-semibold);
+}
+.font-bold {
+  font-weight: var(--font-bold);
+}
+
+/* BUTTON UTILITIES */
+.btn {
+  border: none;
+  cursor: pointer;
+  font-weight: var(--font-semibold);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  border-radius: var(--radius-md);
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: var(--text-white);
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+.btn-secondary {
+  background: var(--secondary-color);
+  color: var(--text-white);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-white);
+  border: 1px solid var(--border-medium);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* CARD UTILITIES */
+.card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  transition: all 0.3s ease;
+}
+
+/* LAYOUT UTILITIES */
+.container {
+  max-width: 1400px !important; /* POVEĆANO NA 1400px */
+  margin: 0 auto !important;
+  padding: 0 var(--space-7) !important;
+  width: 100% !important;
+}
+.section {
+  padding: var(--space-9) 0;
+}
+
+/* RESPONSIVE UTILITIES */
+@media (max-width: 1200px) {
+  .grid-5 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-5 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-5 {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,35 +1,41 @@
-/* Card.css - FINALNA verzija bez debug stilova */
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap");
+/* CARD COMPONENT - AŽURIRANO SA VARIJABLAMA */
 
 .slickdeals-card {
-  width: 100%; /* Kartica će sada zauzimati 100% širine svoje grid ćelije */
+  width: 100%;
   max-width: 100%;
-  background: white;
-  border: 1px solid #e1e1e1;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  font-family: "Outfit", "Inter", Arial, sans-serif;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  font-family: var(--font-main);
   overflow: hidden;
-  padding: 8px;
+  padding: var(--space-3);
   box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.slickdeals-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
 .card-image-container {
   width: 100%;
   height: 150px;
   overflow: hidden;
-  background: #f8f9fa;
-  margin-bottom: 8px;
-  border-radius: 6px;
+  background: var(--bg-lighter);
+  margin-bottom: var(--space-3);
+  border-radius: var(--radius-lg);
   cursor: pointer;
-  transition: transform 0.2s ease;
 }
+
 .card-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 6px;
+  border-radius: var(--radius-lg);
+  transition: transform 0.2s ease;
 }
 
 .slickdeals-card:hover .card-image {
@@ -41,20 +47,19 @@
 }
 
 .card-title {
-  font-size: 12px;
+  font-size: var(--text-sm);
   line-height: 1.4;
-  color: #2c3e50;
+  color: var(--text-dark);
   text-decoration: none;
   display: block;
   margin-bottom: 24px;
   cursor: pointer;
-  font-weight: bold;
-  cursor: pointer;
+  font-weight: var(--font-bold);
   transition: color 0.2s ease;
 }
 
 .card-title:hover {
-  color: #ff6c37;
+  color: var(--primary-color);
 }
 
 .card-meta {
@@ -62,47 +67,47 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 24px;
-  font-size: 11px;
+  font-size: var(--text-xs);
 }
 
 .store-name,
 .time-left {
-  color: #7f8c8d;
-  font-weight: bold;
+  color: var(--text-light);
+  font-weight: var(--font-bold);
 }
 
 .time-left {
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: var(--space-1);
 }
 
 .card-prices {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  margin-bottom: 16px;
+  gap: var(--space-1);
+  margin-bottom: var(--space-8);
 }
 
 .price-main-line {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--space-2);
 }
 
 .current-price {
-  font-size: 14px;
-  font-weight: bold;
+  font-size: var(--text-md);
+  font-weight: var(--font-bold);
   color: #000;
 }
 
 .discount-badge {
-  background: #e74c3c;
-  color: white;
-  font-size: 10px;
-  font-weight: bold;
-  padding: 2px 4px;
-  border-radius: 3px;
+  background: var(--error-color);
+  color: var(--text-white);
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  padding: var(--space-1) var(--space-1);
+  border-radius: var(--radius-sm);
 }
 
 .price-original-line {
@@ -111,40 +116,41 @@
 }
 
 .original-price {
-  font-size: 11px;
-  color: #e74c3c;
+  font-size: var(--text-xs);
+  color: var(--error-color);
   text-decoration: line-through;
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: var(--space-1);
 }
 
 .original-price .fa-fire {
   font-size: 16px;
-  color: #e74c3c;
-  padding-left: 8px;
+  color: var(--error-color);
+  padding-left: var(--space-3);
 }
 
 .card-store-footer {
-  font-size: 11px;
-  color: #95a5a6;
+  font-size: var(--text-xs);
+  color: var(--text-muted);
   text-align: center;
-  margin-top: 8px;
+  margin-top: var(--space-3);
 }
 
 .card-divider {
   height: 2px;
-  background: #f1f2f6;
-  margin: 4px 0;
+  background: var(--bg-lighter);
+  margin: var(--space-1) 0;
 }
 
 .card-actions {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 2px;
-  padding-left: 2px;
+  padding-top: var(--space-1);
+  padding-left: var(--space-1);
 }
+
 .popular-deal-item {
   cursor: pointer;
   transition: all 0.3s ease;
@@ -154,38 +160,39 @@
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
+
 .left-actions {
   display: flex;
-  gap: 12px;
+  gap: var(--space-5);
 }
 
 .action-btn {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-1);
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 12px;
-  color: #95a5a6;
+  font-size: var(--text-sm);
+  color: var(--text-muted);
   transition: all 0.2s ease;
-  padding: 4px 8px;
-  border-radius: 4px;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-md);
 }
 
 .action-btn:hover {
-  background: #f8f9fa;
+  background: var(--bg-lighter);
 }
 
 .action-icon {
-  font-size: 14px;
-  color: #95a5a6;
+  font-size: var(--text-md);
+  color: var(--text-muted);
 }
 
 .action-count {
-  font-size: 12px;
-  color: #95a5a6;
-  font-weight: 500;
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  font-weight: var(--font-medium);
 }
 
 /* Responsive adjustments */
